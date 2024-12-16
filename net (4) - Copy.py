@@ -43,7 +43,7 @@ while True:
     print(' 5- compare startup to running config')             #IMPORTANT pls choose option 3 first
     print(' 6- compare local to running config ')              #IMPORTANT pls choose option 3 first
     print(' 7- create loopback1 interface')
-    #task 3
+                                                                #task 3
     print(' 8- new interface called fastethernet 0/1')
     print(' 9- configure OSPF')
     print(' 10- exit')
@@ -197,10 +197,14 @@ while True:
 
         ospf_config = [
            'router ospf 1',
+           'router-id 1.1.1.1',
            'network 192.168.1.0 0.0.0.255 area 0'
        ]
         ospf = connection.send_config_set(ospf_config)
         print(ospf)
+
+
+
 
         ospf1 = connection.send_command('show ip ospf')
         print(ospf1)
